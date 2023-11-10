@@ -31,7 +31,7 @@ function Form({ base_api_url }) {
       {/* survey form */}
       <form encType="multipart/form-data" method="PUT">
         {/* questions */}
-        <Questions questions={questions} />
+        <Questions questions={questions} base_api_url={base_api_url} />
       </form>
     </div>
   );

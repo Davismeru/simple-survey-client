@@ -7,7 +7,7 @@ function Email({ email, setEmail, setInputCheck }) {
     <div>
       <input
         type="email"
-        placeholder="Kimani Ann Nyambura"
+        placeholder="ann@gmail.com"
         value={email}
         onChange={handleInputChange}
       />

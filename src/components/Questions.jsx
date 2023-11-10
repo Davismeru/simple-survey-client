@@ -9,7 +9,7 @@ import Certificates from "./questionsList/Certificates";
 import axios from "axios";
 import Confirm from "./questionsList/Confirm";
 
-function Questions({ questions }) {
+function Questions({ questions, base_api_url }) {
   // destructure questions prop
   const {
     full_name,
@@ -134,8 +134,7 @@ function Questions({ questions }) {
     for (let i = 0; i < userCertificates.length; i++) {
       formData.append("certificates", userCertificates[i]);
     }
-    console.log(userCertificates);
-    await axios.put("http://localhost:3000/api/questions/responses", formData);
+    await axios.put(`${base_api_url}/api/questions/responses`, formData);
     navigate("/success");
   };
 

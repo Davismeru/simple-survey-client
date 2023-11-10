@@ -8,7 +8,7 @@ function Confirm({
 }) {
   return (
     <div className="confirm_section">
-      <section className="text-lg text-gray-500 flex flex-col gap-2 h-72 overflow-y-auto md:h-52 md:text-[12px]">
+      <section className="text-lg text-gray-500 flex flex-col gap-2 h-72 overflow-y-auto md:h-56 md:text-[12px]">
         <p>
           <span>FULL NAME</span> {name}
         </p>

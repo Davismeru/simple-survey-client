@@ -24,7 +24,7 @@ function Stack({ setUserStack, setInputCheck }) {
   };
 
   return (
-    <div className="h-72 text-lg overflow-y-auto md:h-36 md:text-sm">
+    <div className="h-72 text-lg overflow-y-auto md:h-54 md:text-sm">
       <Select options={options} isMulti onChange={handleChange} />
     </div>
   );
