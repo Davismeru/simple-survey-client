@@ -33,6 +33,7 @@ function Questions({ questions, base_api_url }) {
   const [counter, setCounter] = useState(0);
   const [inputCheck, setInputCheck] = useState(""); //confirm initial state of each input is not empty
   const [fileNames, setFileNames] = useState([]); //recieve an array of uploaded cert's names from Certificates component
+  const [isLoading, setIsLoading] = useState(false);
 
   // BUTTONS FUNCTIONS
   const handlePrevious = (e) => {
@@ -123,6 +124,8 @@ function Questions({ questions, base_api_url }) {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
+    setIsLoading(true);
+
     const formData = new FormData();
 
     e.preventDefault();
@@ -169,7 +172,7 @@ function Questions({ questions, base_api_url }) {
           className={counter < questionsArr.length ? "hidden" : "visible"}
           onClick={handleSubmit}
         >
-          Submit
+          {isLoading ? <p>submitting...</p> : <p>Submit</p>}
         </button>
       </div>
     </div>
