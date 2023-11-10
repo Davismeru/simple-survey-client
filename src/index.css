@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,800;1,400;1,800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+/* custom scroll bar */
+::-webkit-scrollbar {
+  @apply w-1;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-white;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-500;
+}
+
+body {
+  @apply p-5 min-h-screen bg-gray-100 md:flex items-center justify-center;
+}
+
+.container {
+  @apply h-screen flex flex-col justify-center items-center gap-10 overflow-hidden md:flex-row md:h-[60vh] md:w-[70vw] md:gap-0 md:rounded-md md:shadow-sm;
+}
+.header {
+  @apply flex flex-col justify-center items-center md:bg-purple-600 md:h-full md:basis-[40%] md:text-white;
+}
+
+.header a {
+  @apply text-blue-400 mx-4 md:text-gray-50 md:text-sm md:mx-2;
+}
+
+form {
+  @apply h-[60vh] shadow-sm text-2xl p-5 bg-white basis-[60%];
+}
+
+input {
+  @apply border-[2px] p-5 w-full rounded-sm outline-none text-xl text-gray-600 md:border-[1px] md:p-3 md:text-sm md:rounded-md;
+}
+
+button {
+  @apply outline-none bg-blue-500 mr-4 mt-5 w-28 p-2 rounded-sm text-lg text-white md:p-1 md:text-sm;
+}
+
+.questions_container {
+  @apply flex flex-col h-full justify-between md:justify-around;
+}
+
+.confirm_section span {
+  @apply text-blue-400 text-xl md:text-sm;
+}
+
+.confirm_section p {
+  @apply flex flex-col;
+}
+
+.res_container {
+  @apply flex flex-col gap-5 mt-5 md:text-sm;
+}
+
+.res_header {
+  @apply text-center;
+}
+
+.res_header section {
+  @apply flex justify-center gap-5 text-blue-500 md:text-sm;
+}
+
+.res_card {
+  @apply bg-blue-100 p-4 rounded-md text-gray-500;
+}
+
+.res_card span {
+  @apply text-black font-semibold;
+}
+
+.filter_section input {
+  @apply py-2 mt-5 border-none rounded-lg;
+}
+
+.pagination_btn {
+  @apply bg-gray-100 text-blue-500 m-0 p-0;
+}
