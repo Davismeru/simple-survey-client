@@ -8,10 +8,12 @@ function Form({ base_api_url }) {
   const handleQuestions = async () => {
     const res = await axios.get(`${base_api_url}/api/questions`);
     const data = res.data[0];
+    setLoading(false);
     setQuestions(data);
   };
 
   const [questions, setQuestions] = useState({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     handleQuestions();
@@ -29,7 +31,18 @@ function Form({ base_api_url }) {
       </div>
 
       {/* survey form */}
-      <form encType="multipart/form-data" method="PUT">
+      <form encType="multipart/form-data" method="PUT" className="relative">
+        {/* loading container */}
+        <section
+          className={
+            loading
+              ? "absolute z-30 w-full h-full bg-white left-0 top-0 flex flex-col items-center justify-center gap-2"
+              : "hidden"
+          }
+        >
+          <img src="loading.gif" alt="loading..." className="w-12 h-12" />
+          <p className="text-sm">Just a sec...</p>
+        </section>
         {/* questions */}
         <Questions questions={questions} base_api_url={base_api_url} />
       </form>
